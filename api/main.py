@@ -8,6 +8,10 @@ from datetime import datetime, timedelta
 
 # ---------- App Setup ----------
 app = FastAPI()
+@app.get("/")
+def home():
+    return {"message": "FastAPI backend is running!"}
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
